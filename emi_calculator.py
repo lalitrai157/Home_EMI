@@ -9,15 +9,15 @@ def calculate_emi(principal, annual_rate, tenure_years):
     """Calculate the Equated Monthly Installment (EMI) for a home loan.
 
     Args:
-        principal: Loan principal amount.
-        annual_rate: Annual interest rate (in percentage, e.g. 8.5 for 8.5%).
-        tenure_years: Loan tenure in years.
+        principal (float): Loan principal amount.
+        annual_rate (float): Annual interest rate in percentage (e.g. 8.5 for 8.5%).
+        tenure_years (int): Loan tenure in years.
 
     Returns:
-        Monthly EMI amount rounded to 2 decimal places.
+        float: Monthly EMI amount rounded to 2 decimal places.
 
     Raises:
-        ValueError: If any input is non-positive, or if annual_rate is >= 100.
+        ValueError: If principal or tenure is non-positive, or if annual_rate is negative.
     """
     if principal <= 0:
         raise ValueError("Principal amount must be positive")
